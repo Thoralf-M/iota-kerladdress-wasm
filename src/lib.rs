@@ -1,7 +1,6 @@
 use wasm_bindgen::prelude::*;
 use iota_signing;
 use iota_conversion::Trinary;
-use std::error;
 
 #[wasm_bindgen]
 pub fn new_address(seed: &str, index: usize, security: usize, checksum: bool) -> String {
