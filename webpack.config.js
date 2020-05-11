@@ -12,7 +12,9 @@ module.exports = {
         libraryExport: 'default'
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        }),
         new WasmPackPlugin({
             crateDirectory: path.resolve(__dirname, ".")
         }),
@@ -23,5 +25,6 @@ module.exports = {
           TextEncoder: ['text-encoding', 'TextEncoder']
         })
     ],
-    mode: 'development',      
+    // mode: 'development',      
+    mode: 'production',      
 };

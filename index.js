@@ -8,4 +8,5 @@ async function generateAddress(seed, index, security, checksum) {
     console.error(err)
   }
 }
-export default { generateAddress }
+let wasmmodule = import('./pkg')
+export default { generateAddress, wasmmodule }
