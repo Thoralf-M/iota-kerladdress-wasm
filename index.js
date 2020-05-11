@@ -9,4 +9,5 @@ async function generateAddress(seed, index, security, checksum) {
   }
 }
 let wasmmodule = import('./pkg')
-export default { generateAddress, wasmmodule }
+// export default { generateAddress, wasmmodule }
+export default { wasmmodule }

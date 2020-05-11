@@ -4,7 +4,7 @@ use iota_conversion::Trinary;
 use js_sys::Array;
 
 #[wasm_bindgen]
-pub fn new_address(seed: &str, index: usize, security: usize, checksum: bool) -> String {
+pub fn generate_address(seed: &str, index: usize, security: usize, checksum: bool) -> String {
     let key = iota_signing::key(&seed.trits(), index, security).unwrap();
     let digests = iota_signing::digests(&key).unwrap();
     let address_trits = iota_signing::address(&digests).unwrap();
