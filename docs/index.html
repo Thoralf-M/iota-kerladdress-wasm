@@ -28,40 +28,50 @@
     select {
       font-size: 16px;
     }
-    pre{
+
+    pre {
       margin: 0;
       font-size: 16px;
     }
-    button{
-  font-size:1.8rem!important;
-}
-.button{
-  margin:0.5rem;
-  color:white;
-  padding-left:3rem;
-  padding-right:3rem;
-  padding-top:1.5rem;
-  padding-bottom:1.5rem;
-  border-radius:6px;
-  border:none;
-  transition: .25s;
-  box-shadow:0 0 1rem#000;
-  outline:0;
-  font-size:1.8rem;
-}
-.button:hover{
-  transform:translateY(1px);
-}
+
+    button {
+      font-size: 1.8rem !important;
+    }
+
+    .button {
+      margin: 0.5rem;
+      color: white;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 6px;
+      border: none;
+      transition: .25s;
+      box-shadow: 0 0 1rem#000;
+      outline: 0;
+      font-size: 1.8rem;
+    }
+
+    .button:hover {
+      transform: translateY(1px);
+    }
   </style>
 </head>
 
 <body>
   <h1>WASM IOTA ADDRESS GENERATOR</h1>
-  <h2>Don't use your mainnet seed!</h2>
+  <label>Node:</label>
+  <input type="text" id="node" placeholder="https://nodes.thetangle.org:443" value="https://nodes.thetangle.org:443"
+    size="40">
+  <label>MWM:</label>
+  <input type="text" id="mwm" placeholder="14" value="14" size="5">
+  <br>
+  <h1>DON'T USE YOUR MAINNET SEED</h1>
   <label>SEED:</label>
-  <input type="text" id="seed" placeholder="VGKVEYLVIHEJDLU9G9HKCYUCCEPFYWCGJJ9WWCZVRBCVVJTCAFTEBUWOAYZBQRXLJGIGGSRARRBWGZHZY"
-  value="VGKVEYLVIHEJDLU9G9HKCYUCCEPFYWCGJJ9WWCZVRBCVVJTCAFTEBUWOAYZBQRXLJGIGGSRARRBWGZHZY"
-    size="90">
+  <input type="text" id="seed"
+    placeholder="VGKVEYLVIHEJDLU9G9HKCYUCCEPFYWCGJJ9WWCZVRBCVVJTCAFTEBUWOAYZBQRXLJGIGGSRARRBWGZHZY"
+    value="VGKVEYLVIHEJDLU9G9HKCYUCCEPFYWCGJJ9WWCZVRBCVVJTCAFTEBUWOAYZBQRXLJGIGGSRARRBWGZHZY" size="90">
   <label>Security Lvl:</label>
   <select id="secLvl">
     <option value="1">Low: 1</option>
@@ -86,6 +96,12 @@
   <input type="button" value="Clear addresses" onclick="clearAddresses()">
   <input type="button" value="Get balance" onclick="getBalance()">
   <span id="balance"></span>
+  <br>
+  <label>Address to which the funds are sent:</label>
+  <input type="text" id="destination_address"
+    placeholder="TROLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOFELOLOLOLOLOLOLOLOAD"
+    value="TROLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOFELOLOLOLOLOLOLOLOAD" size="90">
+  <input type="button" value="Send all iotas" onclick="send_all_iotas()">
   <br>
   <div id="status"></div>
   <span>Index: address</span><br>
